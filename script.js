@@ -1,12 +1,12 @@
 // La liste des liens est obtenue grâce à la lecture d’un fichier csv (Libre Office Calc, Excel, Google Sheets)
 
 // Configuration :
-const csv = "links.csv";
+const csv = "Zotero_Documentation.csv";
 const separator = ";"
 
 // Lecture du fichier
 var request = new XMLHttpRequest();  
-request.open("GET", "links.csv", false);   
+request.open("GET", "Zotero_Documentation.csv", false);   
 request.send(null);  
 
 // fonction pour supprimer les guillemets autour des chaînes
@@ -57,7 +57,7 @@ for (var i = 0; i < links.length; i++) {
   // ici, on pourrait ajouter des class en fonction de la colonne “categories”
   a.classList.add('link');
   // texte et href issus des attributs "text" et "url" de l’élément
-  a.textContent = link.text; // Le nom qui suivera le link. sera celui affiché dans le fichier csv que ce soit .Title/ .Autor
+  a.textContent = link.Title; // Le nom qui suivera le link. sera celui affiché dans le fichier csv que ce soit .Title/ .Autor
   a.href = link.Url;
   document.body.appendChild(a);
   // on l’ajoute à la liste des éléments
